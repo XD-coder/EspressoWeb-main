@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Interactive Element Styles */
+a, button, input, textarea, select {
+  @apply transition-all duration-300 ease-out cursor-pointer;
+}
+
+a:hover, button:hover {
+  @apply scale-105 text-brown-400;
+}
+
+button:active {
+  @apply scale-95;
+}
+
+input:focus, textarea:focus, select:focus {
+  @apply ring-2 ring-brown-600/50 outline-none transform scale-[1.02];
+}
+
+/* Enhanced hover effects for interactive elements */
+.hover-lift {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-1;
+}
+
+/* Smooth fade effects */
+.fade-enter {
+  @apply transition-opacity duration-300 ease-in;
+}
+
+.fade-enter:hover {
+  @apply opacity-80;
+}
