@@ -17,7 +17,7 @@ const founders = [
     name: 'Krishna',
     title: 'VPS Manager & Investor & Founder',
     description: 'As our dedicated VPS manager and key investor, Krishna plays a vital role in overseeing our server infrastructure and business growth. His strategic investments and expertise in managing virtual private servers ensure our hosting services maintain the highest standards of reliability and performance.',
-    image: 'https://cdn.discordapp.com/avatars/1329892250494308372/a_4754ad54b9c68e8a45a59fcb8c3401a9?size=1024',
+    image: 'https://i.pinimg.com/736x/fa/b2/ad/fab2ad62c80bf1a7b2da5aeb229e5ee9.jpg',
     icon: <Database className="w-6 h-6" />
   },
   {
