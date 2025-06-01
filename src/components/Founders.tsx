@@ -6,10 +6,10 @@ import Image from 'next/image'; // Import Image from Next.js
 
 const founders = [
   {
-    name: 'Matei',
-    title: 'Lead Developer & Founder',
-    description: 'The visionary behind Espresso Hosting\'s success story. Matei, the lead developer and founder, brings a wealth of experience and a passion for innovation to the table. With a keen eye for detail and a commitment to excellence, Matei ensures our platform is not just functional but also user-friendly and aesthetically pleasing.',
-    image: 'https://cdn.discordapp.com/avatars/784443338627612673/ece15e450a7e1b6cc644fe819c1e72f6?size=1024',
+    name: 'Kartikey',
+    title: 'Lead Developer & Co-Founder',
+    description: 'Kartikey, the lead developer and co-founder, is the architect of Espresso Hosting. With a passion for technology and a commitment to excellence, Kartikey leads the development team, ensuring that our platform is not only functional but also user-friendly and optimized for performance.',
+    image: 'https://cdn.discordapp.com/avatars/1048721304599150672/709177960108af4b9001a68d50c15e8d.webp?size=1024',
     icon: <Code className="w-6 h-6" />,
     link: 'https://devmatei.is-a.dev'
   },
