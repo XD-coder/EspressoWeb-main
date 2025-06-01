@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'; // Adjusted import path
 import { Footer } from '@/components/Footer'; // Adjusted import path
-import { CustomCursor } from '@/components/CustomCursor'; // Adjusted import path
+
 import './../index.css'; // Adjusted import path for global styles
 
 export const metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
       <body>
         <div className="min-h-screen bg-dark-100 text-white">
           <div className="fixed inset-0 bg-gradient-radial from-brown-600/10 via-transparent to-transparent pointer-events-none" />
-          <CustomCursor />
+          
           <Header />
           <main className="pt-20"> {/* Added padding-top for header */}
             {children}
