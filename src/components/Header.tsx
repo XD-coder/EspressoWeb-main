@@ -22,7 +22,7 @@ export function Header() {
           >
             <Tag className="w-5 h-5 text-brown-200" />
           </motion.div>
-          <span className="text-brown-100">We are open! Enjoy 10% discount on everything</span>
+          <span className="text-brown-100">We are open! Enjoy 40% discount on everything</span>
         </div>
       </motion.div>
       
