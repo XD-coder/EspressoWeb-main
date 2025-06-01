@@ -8,13 +8,12 @@ import Link from 'next/link'; // Import Link from Next.js
 const plans = [
   {
     name: 'The Single Shot',
-    price: '€3.99',
-    discountedPrice: '€3.59',
+    price: '₹249',
+    discountedPrice: '₹149',
     features: [
-      '2 GB RAM',
-      '1vcore',
-      '20gb nvme',
-      '10 Player Slots',
+      '4 GB RAM',
+      '2vcore',
+      '10gb nvme',
       'DDoS Protection',
       '24/7 Support (Discord)'
     ],
@@ -22,13 +21,12 @@ const plans = [
   },
   {
     name: 'The Double Shot',
-    price: '€5.99',
-    discountedPrice: '€5.39',
+    price: '₹399',
+    discountedPrice: '₹239',
     features: [
-      '4 GB RAM',
-      '2vcore',
-      '40gb nvme',
-      '25 Player Slots',
+      '6 GB RAM',
+      '3vcore',
+      '15gb nvme',
       'DDoS Protection',
       '24/7 Priority Support'
     ],
@@ -37,13 +35,12 @@ const plans = [
   },
   {
     name: 'The Latte',
-    price: '€9.99',
-    discountedPrice: '€8.99',
+    price: '₹499',
+    discountedPrice: '₹299',
     features: [
       '8 GB RAM',
-      '5vcore',
-      '60 GB SSD',
-      '50 Player Slots',
+      '4vcore',
+      '20 GB SSD',
       'DDoS Protection',
       '24/7 VIP Support'
     ],

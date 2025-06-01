@@ -9,49 +9,72 @@ const gameCategories = [
   {
     name: 'Minecraft',
     plans: [
-      {
-        name: 'The Single Shot',
-        price: '€2.99',
-        discountedPrice: '€2.69',
-        features: [
-          '2 GB RAM',
-          '1 vCPU',
-          '20GB NVMe SSD',
-          '10 Player Slots',
-          'DDoS Protection',
-          'Community Support &#40;Discord&#41;'
-        ],
-        icon: <Gamepad className="w-6 h-6" />
-      },
-      {
-        name: 'The Double Shot',
-        price: '€4.99',
-        discountedPrice: '€4.49',
-        features: [
-          '4 GB RAM',
-          '2 vCPU',
-          '40GB NVMe SSD',
-          '20 Player Slots',
-          'DDoS Protection',
-          'Priority Support'
-        ],
-        icon: <Server className="w-6 h-6" />,
-        popular: true
-      },
-      {
-        name: 'The Latte',
-        price: '€8.99',
-        discountedPrice: '€8.09',
-        features: [
-          '8 GB RAM',
-          '4 vCPU',
-          '60GB NVMe SSD',
-          '40 Player Slots',
-          'DDoS Protection',
-          'VIP Support'
-        ],
-        icon: <Cpu className="w-6 h-6" />
-      }
+  {
+    name: 'The Single Shot',
+    price: '₹249',
+    discountedPrice: '₹149',
+    features: [
+      '4 GB RAM',
+      '2vcore',
+      '10gb nvme',
+      'DDoS Protection',
+      '24/7 Support (Discord)'
+    ],
+    icon: <Coffee className="w-6 h-6" />
+  },
+  {
+    name: 'The Double Shot',
+    price: '₹399',
+    discountedPrice: '₹239',
+    features: [
+      '6 GB RAM',
+      '3vcore',
+      '15gb nvme',
+      'DDoS Protection',
+      '24/7 Priority Support'
+    ],
+    icon: <CoffeeIcon className="w-6 h-6" />,
+    popular: true
+  },
+  {
+    name: 'The Latte',
+    price: '₹499',
+    discountedPrice: '₹299',
+    features: [
+      '8 GB RAM',
+      '4vcore',
+      '20 GB SSD',
+      'DDoS Protection',
+      '24/7 VIP Support'
+    ],
+    icon: <Coffee className="w-6 h-6" />
+  },
+  {
+    name: 'The Americano',
+    price: '₹599',
+    discountedPrice: '₹419',
+    features: [
+      '12 GB RAM',
+      '6vcore',
+      '30gb nvme',
+      'DDoS Protection',
+      '24/7 VIP Support'
+    ],
+    icon: <Coffee className="w-6 h-6" />
+  },
+  {
+    name: 'The Frappuccino',
+    price: '₹785',
+    discountedPrice: '₹550',
+    features: [
+      '16 GB RAM',
+      '6vcore',
+      '40gb nvme',
+      'DDoS Protection',
+      '24/7 VIP Support'
+    ],
+    icon: <Coffee className="w-6 h-6" />
+  }
     ]
   },
   {

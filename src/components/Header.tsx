@@ -25,7 +25,6 @@ export function Header() {
           <span className="text-brown-100">We are open! Enjoy 40% discount on everything</span>
         </div>
       </motion.div>
-      
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
