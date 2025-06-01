@@ -1,5 +1,8 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Code, Database, Scale, Coffee } from 'lucide-react';
+import Image from 'next/image'; // Import Image from Next.js
 
 const founders = [
   {
@@ -55,9 +58,11 @@ export function Founders() {
                 className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden"
                 whileHover={{ scale: 1.05 }}
               >
-                <img
+                <Image
                   src={founder.image}
                   alt={founder.name}
+                  width={192} // Required for next/image, w-48 is 192px
+                  height={192} // Required for next/image, h-48 is 192px
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-100/90 to-transparent" />

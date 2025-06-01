@@ -1,8 +1,25 @@
+'use client';
+
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { Server, Zap, Coffee } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
+import Link from 'next/link'; // Import Link from Next.js
 
 export function Hero() {
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
+    };
+
+    handleResize(); // Set initial values
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <section className="min-h-screen pt-36 pb-16 relative overflow-hidden bg-gradient-to-b from-dark-200 to-dark-100">
       <div className="absolute inset-0 overflow-hidden">
@@ -14,13 +31,13 @@ export function Hero() {
             key={i}
             className="absolute"
             initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (windowWidth || 1920),
+              y: Math.random() * (windowHeight || 1080),
               rotate: 0,
               scale: 0.5
             }}
             animate={{ 
-              y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
+              y: [Math.random() * (windowHeight || 1080), Math.random() * (windowHeight || 1080)],
               rotate: 360,
               scale: [0.5, 0.8, 0.5],
             }}
@@ -40,12 +57,12 @@ export function Hero() {
             key={`orb-${i}`}
             className="absolute w-4 h-4 rounded-full bg-gradient-radial from-brown-400/20 to-transparent"
             initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: Math.random() * (windowWidth || 1920),
+              y: Math.random() * (windowHeight || 1080),
               scale: 0
             }}
             animate={{ 
-              y: [Math.random() * window.innerHeight, Math.random() * window.innerHeight],
+              y: [Math.random() * (windowHeight || 1080), Math.random() * (windowHeight || 1080)],
               scale: [0, 1, 0],
               opacity: [0, 0.5, 0]
             }}
@@ -110,25 +127,27 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, type: 'spring', bounce: 0.4 }}
           >
-            <motion.a
-              href="#plans"
-              className="px-8 py-3 rounded-lg bg-gradient-to-r from-brown-600 to-brown-700 text-white font-medium flex items-center gap-2 group hover:shadow-lg hover:shadow-brown-600/20 transition-all"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Server className="w-5 h-5" />
-              <span>Explore Server Plans</span>
-            </motion.a>
+            <Link href="/all-plans" passHref legacyBehavior>
+              <motion.a
+                className="px-8 py-3 rounded-lg bg-gradient-to-r from-brown-600 to-brown-700 text-white font-medium flex items-center gap-2 group hover:shadow-lg hover:shadow-brown-600/20 transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Server className="w-5 h-5" />
+                <span>Explore Server Plans</span>
+              </motion.a>
+            </Link>
             
-            <motion.a
-              href="#features"
-              className="px-8 py-3 rounded-lg border border-brown-400 text-brown-400 font-medium flex items-center gap-2 hover:bg-brown-400/10 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Zap className="w-5 h-5" />
-              <span>Learn More</span>
-            </motion.a>
+            <Link href="/#features" passHref legacyBehavior>
+              <motion.a
+                className="px-8 py-3 rounded-lg border border-brown-400 text-brown-400 font-medium flex items-center gap-2 hover:bg-brown-400/10 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Zap className="w-5 h-5" />
+                <span>Learn More</span>
+              </motion.a>
+            </Link>
           </motion.div>
         </ScrollReveal>
       </div>

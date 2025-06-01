@@ -1,6 +1,9 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Coffee, CoffeeIcon, Cpu, Database, Globe, Shield } from 'lucide-react';
 import { useState } from 'react';
+import Link from 'next/link'; // Import Link from Next.js
 
 const plans = [
   {
@@ -124,8 +127,8 @@ export function Plans() {
                 ))}
               </ul>
 
+              <Link href="/payment" passHref legacyBehavior>
               <motion.a
-                href="/payment"
                 className={`w-full py-3 rounded-lg ${
                   plan.popular
                     ? 'bg-gradient-to-r from-brown-600 to-brown-700 text-white hover:shadow-lg hover:shadow-brown-600/20'
@@ -136,6 +139,7 @@ export function Plans() {
               >
                 Select Plan
               </motion.a>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -146,14 +150,15 @@ export function Plans() {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
-          <motion.a
-            href="/all-plans"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-brown-600 to-brown-700 text-white font-medium hover:shadow-lg hover:shadow-brown-600/20 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View More Plans
-          </motion.a>
+          <Link href="/all-plans" passHref legacyBehavior>
+            <motion.a
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-brown-600 to-brown-700 text-white font-medium hover:shadow-lg hover:shadow-brown-600/20 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View More Plans
+            </motion.a>
+          </Link>
         </motion.div>
       </div>
     </section>

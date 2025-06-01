@@ -1,5 +1,8 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Coffee, Tag } from 'lucide-react';
+import Link from 'next/link'; // Import Link from Next.js
 
 export function Header() {
   return (
@@ -54,14 +57,15 @@ export function Header() {
         </motion.div>
         
         <div className="flex items-center gap-4">
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="#plans"
-            className="px-4 py-2 rounded-lg bg-brown-600 text-white font-medium hover:bg-brown-700 transition-colors"
-          >
-            Purchase
-          </motion.a>
+          <Link href="/all-plans" passHref legacyBehavior>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-4 py-2 rounded-lg bg-brown-600 text-white font-medium hover:bg-brown-700 transition-colors"
+            >
+              Purchase
+            </motion.a>
+          </Link>
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

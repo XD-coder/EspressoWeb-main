@@ -1,5 +1,8 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Coffee, Facebook, Github, Instagram, Twitter } from 'lucide-react';
+import Link from 'next/link'; // Import Link from Next.js
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,9 +27,9 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#plans" className="text-neutral-400 hover:text-brown-400 transition-colors">Plans</a></li>
-              <li><a href="#features" className="text-neutral-400 hover:text-brown-400 transition-colors">Features</a></li>
-              <li><a href="#founders" className="text-neutral-400 hover:text-brown-400 transition-colors">About Us</a></li>
+              <li><Link href="/all-plans" className="text-neutral-400 hover:text-brown-400 transition-colors">Plans</Link></li>
+              <li><Link href="/#features" className="text-neutral-400 hover:text-brown-400 transition-colors">Features</Link></li>
+              <li><Link href="/#founders" className="text-neutral-400 hover:text-brown-400 transition-colors">About Us</Link></li>
               <li><a href="https://panel.espressohost.xyz" className="text-neutral-400 hover:text-brown-400 transition-colors">Control Panel</a></li>
             </ul>
           </div>
@@ -34,9 +37,9 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li><a href="/privacy" className="text-neutral-400 hover:text-brown-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms" className="text-neutral-400 hover:text-brown-400 transition-colors">Terms of Service</a></li>
-              <li><a href="/refund" className="text-neutral-400 hover:text-brown-400 transition-colors">Refund Policy</a></li>
+              <li><Link href="/privacy" className="text-neutral-400 hover:text-brown-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-neutral-400 hover:text-brown-400 transition-colors">Terms of Service</Link></li>
+              <li><Link href="/refund" className="text-neutral-400 hover:text-brown-400 transition-colors">Refund Policy</Link></li>
             </ul>
           </div>
 
