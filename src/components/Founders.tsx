@@ -3,31 +3,23 @@
 import { motion } from 'framer-motion';
 import { Code, Database, Scale, Coffee } from 'lucide-react';
 import Image from 'next/image'; // Import Image from Next.js
+import { founders } from '@/data/siteData'; // Adjusted import path
 
-const founders = [
-  {
-    name: 'Kartikey',
-    title: 'Lead Developer & Co-Founder',
-    description: 'Kartikey, the lead developer and co-founder, is the architect of Espresso Hosting. With a passion for technology and a commitment to excellence, Kartikey leads the development team, ensuring that our platform is not only functional but also user-friendly and optimized for performance.',
-    image: 'https://cdn.discordapp.com/avatars/1048721304599150672/709177960108af4b9001a68d50c15e8d.webp?size=1024',
-    icon: <Code className="w-6 h-6" />,
-    link: 'https://devmatei.is-a.dev'
-  },
-  {
-    name: 'Krishna',
-    title: 'VPS Manager & Investor & Founder',
-    description: 'As our dedicated VPS manager and key investor, Krishna plays a vital role in overseeing our server infrastructure and business growth. His strategic investments and expertise in managing virtual private servers ensure our hosting services maintain the highest standards of reliability and performance.',
-    image: 'https://i.pinimg.com/736x/fa/b2/ad/fab2ad62c80bf1a7b2da5aeb229e5ee9.jpg?size=1024',
-    icon: <Database className="w-6 h-6" />
-  },
-  {
-    name: 'Divyanshu',
-    title: 'Lead Developer & Founder',
-    description: 'A backend virtuoso and the architectural mastermind of Espresso Hosting. Divyanshu, the lead developer and founder, specializes in building robust server infrastructures and optimizing database performance, ensuring our platform operates with maximum efficiency and scalability.',
-    image: 'https://cdn.discordapp.com/avatars/1268498855083638828/a_63b1c5a96e89ad160d89a4140d040cf7?size=1024',
-    icon: <Code className="w-6 h-6" />
+// Helper function to get icon component based on string
+const getIconComponent = (iconName: string) => {
+  switch (iconName) {
+    case 'Code':
+      return <Code className="w-6 h-6" />;
+    case 'Database':
+      return <Database className="w-6 h-6" />;
+    case 'Scale':
+      return <Scale className="w-6 h-6" />;
+    case 'Coffee':
+      return <Coffee className="w-6 h-6" />;
+    default:
+      return null;
   }
-];
+};
 
 export function Founders() {
   return (
@@ -71,7 +63,7 @@ export function Founders() {
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  {founder.icon}
+                  {getIconComponent(founder.icon)}
                 </motion.div>
               </motion.div>
 

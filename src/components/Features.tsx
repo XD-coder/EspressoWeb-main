@@ -2,39 +2,27 @@
 
 import { motion } from 'framer-motion';
 import { Cpu, Globe, Headphones, Layers, Shield, Zap } from 'lucide-react';
+import { features } from '@/data/siteData'; // Adjusted import path
 
-const features = [
-  {
-    icon: <Zap className="w-8 h-8" />,
-    title: 'Lightning-Fast Performance',
-    description: 'Experience minimal latency with our powerful servers optimized for gaming.'
-  },
-  {
-    icon: <Globe className="w-8 h-8" />,
-    title: 'European Infrastructure',
-    description: 'Strategically located servers across Europe for optimal connectivity.'
-  },
-  {
-    icon: <Layers className="w-8 h-8" />,
-    title: 'Easy Management',
-    description: 'User-friendly control panel for effortless server management.'
-  },
-  {
-    icon: <Headphones className="w-8 h-8" />,
-    title: 'Dedicated Support',
-    description: '24/7 responsive customer support to assist you whenever needed.'
-  },
-  {
-    icon: <Shield className="w-8 h-8" />,
-    title: 'DDoS Protection',
-    description: 'Advanced protection against DDoS attacks keeps your server secure.'
-  },
-  {
-    icon: <Cpu className="w-8 h-8" />,
-    title: 'Scalable Resources',
-    description: 'Easily upgrade your plan as your community grows.'
+// Helper function to get icon component based on string
+const getIconComponent = (iconName: string) => {
+  switch (iconName) {
+    case 'Zap':
+      return <Zap className="w-8 h-8" />;
+    case 'Globe':
+      return <Globe className="w-8 h-8" />;
+    case 'Layers':
+      return <Layers className="w-8 h-8" />;
+    case 'Headphones':
+      return <Headphones className="w-8 h-8" />;
+    case 'Shield':
+      return <Shield className="w-8 h-8" />;
+    case 'Cpu':
+      return <Cpu className="w-8 h-8" />;
+    default:
+      return null;
   }
-];
+};
 
 export function Features() {
   return (
@@ -66,7 +54,7 @@ export function Features() {
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                {feature.icon}
+                {getIconComponent(feature.icon)}
               </motion.div>
               <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
               <p className="text-neutral-400">{feature.description}</p>

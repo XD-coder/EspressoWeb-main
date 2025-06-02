@@ -4,173 +4,20 @@ import { motion } from 'framer-motion';
 import { Coffee, CoffeeIcon, Cpu, Database, Globe, Shield, Gamepad, Server } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link'; // Import Link from Next.js
+import { gameCategories } from '@/data/siteData'; // Adjusted import path
 
-const gameCategories = [
-  {
-    name: 'Minecraft',
-    plans: [
-  {
-    name: 'The Single Shot',
-    price: '₹249',
-    discountedPrice: '₹149',
-    features: [
-      '4 GB RAM',
-      '2vcore',
-      '10gb nvme',
-      'DDoS Protection',
-      '24/7 Support (Discord)'
-    ],
-    icon: <Coffee className="w-6 h-6" />
-  },
-  {
-    name: 'The Double Shot',
-    price: '₹399',
-    discountedPrice: '₹239',
-    features: [
-      '6 GB RAM',
-      '3vcore',
-      '15gb nvme',
-      'DDoS Protection',
-      '24/7 Priority Support'
-    ],
-    icon: <CoffeeIcon className="w-6 h-6" />,
-    popular: true
-  },
-  {
-    name: 'The Latte',
-    price: '₹499',
-    discountedPrice: '₹299',
-    features: [
-      '8 GB RAM',
-      '4vcore',
-      '20 GB SSD',
-      'DDoS Protection',
-      '24/7 VIP Support'
-    ],
-    icon: <Coffee className="w-6 h-6" />
-  },
-  {
-    name: 'The Americano',
-    price: '₹599',
-    discountedPrice: '₹419',
-    features: [
-      '12 GB RAM',
-      '6vcore',
-      '30gb nvme',
-      'DDoS Protection',
-      '24/7 VIP Support'
-    ],
-    icon: <Coffee className="w-6 h-6" />
-  },
-  {
-    name: 'The Frappuccino',
-    price: '₹785',
-    discountedPrice: '₹550',
-    features: [
-      '16 GB RAM',
-      '6vcore',
-      '40gb nvme',
-      'DDoS Protection',
-      '24/7 VIP Support'
-    ],
-    icon: <Coffee className="w-6 h-6" />
+// Helper function to get icon component based on string
+const getIconComponent = (iconName: string) => {
+  switch (iconName) {
+    case 'Coffee':
+      return <Coffee className="w-6 h-6" />;
+    case 'CoffeeIcon':
+      return <CoffeeIcon className="w-6 h-6" />;
+    // Add other cases if needed for other icons in gameCategories
+    default:
+      return null;
   }
-    ]
-  },
-  {
-    name: 'Discord Bot (Python)',
-    plans: [
-      {
-        name: 'Espresso Shot',
-        price: '€1.99',
-        discountedPrice: '€1.79',
-        features: [
-          '1 GB RAM',
-          '1 vCPU',
-          '10GB SSD',
-          '99.5% Uptime',
-          'Community Support'
-        ],
-        icon: <CoffeeIcon className="w-6 h-6" />
-      },
-      {
-        name: 'Cappuccino',
-        price: '€3.99',
-        discountedPrice: '€3.59',
-        features: [
-          '2 GB RAM',
-          '1 vCPU',
-          '20GB SSD',
-          '99.5% Uptime',
-          'Email Support'
-        ],
-        icon: <CoffeeIcon className="w-6 h-6" />,
-        popular: true
-      },
-      {
-        name: 'Mocha Latte',
-        price: '€6.99',
-        discountedPrice: '€6.29',
-        features: [
-          '4 GB RAM',
-          '2 vCPU',
-          '40GB SSD',
-          '99.5% Uptime',
-          'Priority Support'
-        ],
-        icon: <CoffeeIcon className="w-6 h-6" />
-      }
-    ]
-  },
-  {
-    name: 'Discord Bot (TypeScript)',
-    plans: [
-      {
-        name: 'Macchiato',
-        price: '€1.49',
-        discountedPrice: '€1.34',
-        features: [
-          '1 GB RAM',
-          '1 vCPU',
-          '10GB SSD',
-          'Node.js 20+',
-          '99.5% Uptime',
-          'Community Support'
-        ],
-        icon: <CoffeeIcon className="w-6 h-6" />
-      },
-      {
-        name: 'Flat White',
-        price: '€2.99',
-        discountedPrice: '€2.69',
-        features: [
-          '2 GB RAM',
-          '1 vCPU',
-          '20GB SSD',
-          'Node.js 20+',
-          '99.5% Uptime',
-          'Email Support &#40;matei@espressohost.xyz or dm on discord devmatei&#41;'
-        ],
-        icon: <CoffeeIcon className="w-6 h-6" />,
-        popular: true
-      },
-      {
-        name: 'Affogato',
-        price: '€4.99',
-        discountedPrice: '€4.49',
-        features: [
-          '3 GB RAM',
-          '2 vCPU',
-          '30GB SSD',
-          'Node.js 20+',
-          '99.5% Uptime',
-          'Priority Support'
-        ],
-        icon: <CoffeeIcon className="w-6 h-6" />
-      }
-    ]
-  }
-];
+};
 
 export default function AllPlansPage() { // Renamed component
   const [hoveredPlan, setHoveredPlan] = useState<{category: number, plan: number} | null>(null);
@@ -227,8 +74,8 @@ export default function AllPlansPage() { // Renamed component
                     transition={{ duration: 0.5 }}
                   >
                     <div className="w-16 h-16 rounded-full bg-brown-600/20 flex items-center justify-center text-brown-400">
-                      {plan.icon}
-                    </div>
+                        {getIconComponent(plan.icon)}
+                      </div>
                   </motion.div>
 
                   <h3 className="text-2xl font-bold text-white text-center mb-2">{plan.name}</h3>

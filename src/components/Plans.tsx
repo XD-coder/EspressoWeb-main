@@ -4,49 +4,20 @@ import { motion } from 'framer-motion';
 import { Coffee, CoffeeIcon, Cpu, Database, Globe, Shield } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link'; // Import Link from Next.js
+import { homePagePlans } from '@/data/siteData'; // Adjusted import path
 
-const plans = [
-  {
-    name: 'The Single Shot',
-    price: '₹249',
-    discountedPrice: '₹149',
-    features: [
-      '4 GB RAM',
-      '2vcore',
-      '10gb nvme',
-      'DDoS Protection',
-      '24/7 Support (Discord)'
-    ],
-    icon: <Coffee className="w-6 h-6" />
-  },
-  {
-    name: 'The Double Shot',
-    price: '₹399',
-    discountedPrice: '₹239',
-    features: [
-      '6 GB RAM',
-      '3vcore',
-      '15gb nvme',
-      'DDoS Protection',
-      '24/7 Priority Support'
-    ],
-    icon: <CoffeeIcon className="w-6 h-6" />,
-    popular: true
-  },
-  {
-    name: 'The Latte',
-    price: '₹499',
-    discountedPrice: '₹299',
-    features: [
-      '8 GB RAM',
-      '4vcore',
-      '20 GB SSD',
-      'DDoS Protection',
-      '24/7 VIP Support'
-    ],
-    icon: <Coffee className="w-6 h-6" />
+// Helper function to get icon component based on string
+const getIconComponent = (iconName: string) => {
+  switch (iconName) {
+    case 'Coffee':
+      return <Coffee className="w-6 h-6" />;
+    case 'CoffeeIcon':
+      return <CoffeeIcon className="w-6 h-6" />;
+    // Add other cases if needed for other icons in plans
+    default:
+      return null;
   }
-];
+};
 
 export function Plans() {
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
@@ -65,7 +36,7 @@ export function Plans() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
+          {homePagePlans.map((plan, index) => (
             <motion.div
               key={plan.name}
               className={`relative rounded-2xl p-8 bg-dark-100 ${
@@ -94,7 +65,7 @@ export function Plans() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="w-16 h-16 rounded-full bg-brown-600/20 flex items-center justify-center text-brown-400">
-                  {plan.icon}
+                  {getIconComponent(plan.icon)}
                 </div>
               </motion.div>
 
